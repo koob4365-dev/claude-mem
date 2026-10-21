@@ -1,4 +1,8 @@
-# Crownless Mesh cloud body
+# Eidolon Concord 1
+
+**Eidolon Concord 1** is the English project name for "鬼神同行1". One task
+identity can move among several AI bodies. Any node may hold the temporary lead,
+but no node is the whole identity.
 
 This directory describes the reproducible cloud execution body for this fork.
 It is deliberately separate from claude-mem's application source: no runtime
