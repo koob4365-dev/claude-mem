@@ -1,4 +1,4 @@
-# Claude cloud body
+# Crownless Mesh cloud body
 
 This directory describes the reproducible cloud execution body for this fork.
 It is deliberately separate from claude-mem's application source: no runtime
@@ -21,6 +21,24 @@ The cloud body itself is not downloaded to Windows. A checkout downloads only
 source and declared dependencies. Pinning a Git commit makes a rebuilt body
 repeatable; it does not clone credentials, databases, or live processes.
 
+## Identity and roles
+
+The provider is not the identity and does not permanently own a role. The
+continuous identity is the task state, memory, permissions, and accepted commit
+history. Leadership is a short-lived lease for one stage of work.
+
+| Role | Default candidates | Rule |
+| --- | --- | --- |
+| Coordinator | Current interactive Codex session | Routes work and holds the temporary task lease; it is not a permanent head |
+| Builder | Codex or Claude Code | Receives repository write access for one bounded change |
+| Researcher | OpenAI, Gemini, or an approved search service | Reads external material and does not mutate the repository |
+| Observer | Fast OpenAI-compatible, OpenRouter, Gemini, or Claude model | Compresses observations and does not decide releases |
+| Reviewer | A provider or session independent from the builder | Tests the result and cannot reuse the builder's approval |
+| Private executor | An allowlisted custom gateway | Handles data that policy forbids sending to a public endpoint |
+
+Routing uses privacy, tools, latency, context, cost, and independent-review
+requirements. It does not assign one vendor a permanent personality.
+
 ## Bootstrap and start
 
 From the repository root:
@@ -36,7 +54,27 @@ existing lockfiles. It intentionally does not create a root `package-lock.json`.
 
 ## Providers
 
-Claude login remains the safe default. The worker also supports:
+Claude login remains the safe default. The machine-readable catalog currently
+contains 22 profiles. It covers Claude, Codex, OpenAI, OpenRouter, Gemini,
+NVIDIA NIM, OrcaRouter, API Route, Opper, Atlas Cloud, DeepSeek, OpenCode Go,
+OpenCode Zen, Groq, Together AI, both MiniMax regions, iFlytek, Ollama, LM
+Studio, vLLM, and a custom OpenAI-compatible gateway.
+
+Inspect it without reading or writing any key:
+
+```bash
+node cloud-body/providers/providerctl.mjs list
+node cloud-body/providers/providerctl.mjs show openai
+node cloud-body/providers/providerctl.mjs plan deepseek
+node cloud-body/providers/providerctl.mjs validate
+```
+
+`plan` emits settings, the exact network hostname, and the required secret
+variable name. It never reads a credential value. Localhost profiles cannot
+produce a cloud plan, so the vLLM preset cannot take over the user's external
+port 8000 by accident.
+
+The underlying worker routes are:
 
 | Route | Provider value | Credential |
 | --- | --- | --- |

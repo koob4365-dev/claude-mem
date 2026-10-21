@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "id": "claude",
+      "label": "Claude Code / Anthropic",
+      "provider": "claude",
+      "cloudPolicy": "cloud-ready",
+      "baseUrl": "https://api.anthropic.com",
+      "model": "",
+      "credentialEnv": "ANTHROPIC_API_KEY",
+      "allowedHost": "api.anthropic.com"
+    },
+    {
+      "id": "codex",
+      "label": "Codex app-server",
+      "provider": "codex",
+      "cloudPolicy": "cloud-ready",
+      "baseUrl": "",
+      "model": "",
+      "credentialEnv": null,
+      "allowedHost": null
+    },
+    {
+      "id": "openrouter",
+      "label": "OpenRouter",
+      "provider": "openrouter",
+      "cloudPolicy": "cloud-ready",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "model": "cohere/north-mini-code:free",
+      "credentialEnv": "CLAUDE_MEM_OPENROUTER_API_KEY",
+      "allowedHost": "openrouter.ai"
+    },
+    {
+      "id": "gemini",
+      "label": "Google Gemini",
+      "provider": "gemini",
+      "cloudPolicy": "cloud-ready",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+      "model": "gemini-flash-latest",
+      "credentialEnv": "CLAUDE_MEM_GEMINI_API_KEY",
+      "allowedHost": "generativelanguage.googleapis.com"
+    },
+    {
+      "id": "openai",
+      "label": "OpenAI API",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "custom",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": "gpt-4.1-mini",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.openai.com"
+    },
+    {
+      "id": "nvidia-nim",
+      "label": "NVIDIA NIM",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "nvidia-nim",
+      "baseUrl": "https://integrate.api.nvidia.com/v1",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "integrate.api.nvidia.com"
+    },
+    {
+      "id": "orcarouter",
+      "label": "OrcaRouter",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "orcarouter",
+      "baseUrl": "https://api.orcarouter.ai/v1",
+      "model": "openai/gpt-4o-mini",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.orcarouter.ai"
+    },
+    {
+      "id": "api-route",
+      "label": "API Route",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "api-route",
+      "baseUrl": "https://global.api-route.com/v1",
+      "model": "",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "global.api-route.com"
+    },
+    {
+      "id": "opper",
+      "label": "Opper",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "opper",
+      "baseUrl": "https://api.opper.ai/v3/compat",
+      "model": "gpt-5.4-mini",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.opper.ai"
+    },
+    {
+      "id": "atlascloud",
+      "label": "Atlas Cloud",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "atlascloud",
+      "baseUrl": "https://api.atlascloud.ai/v1",
+      "model": "deepseek-ai/deepseek-v4-flash",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.atlascloud.ai"
+    },
+    {
+      "id": "deepseek",
+      "label": "DeepSeek",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "deepseek",
+      "baseUrl": "https://api.deepseek.com/v1",
+      "model": "deepseek-chat",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.deepseek.com"
+    },
+    {
+      "id": "opencode-go",
+      "label": "OpenCode Go",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "opencode-go",
+      "baseUrl": "https://opencode.ai/zen/go/v1",
+      "model": "kimi-k3",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "opencode.ai"
+    },
+    {
+      "id": "opencode-zen",
+      "label": "OpenCode Zen",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "opencode-zen",
+      "baseUrl": "https://opencode.ai/zen/v1",
+      "model": "",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "opencode.ai"
+    },
+    {
+      "id": "groq",
+      "label": "Groq",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "groq",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "model": "",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.groq.com"
+    },
+    {
+      "id": "together",
+      "label": "Together AI",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "together",
+      "baseUrl": "https://api.together.xyz/v1",
+      "model": "",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.together.xyz"
+    },
+    {
+      "id": "minimax",
+      "label": "MiniMax global",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "minimax",
+      "baseUrl": "https://api.minimax.io/v1",
+      "model": "MiniMax-M3",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.minimax.io"
+    },
+    {
+      "id": "minimax-cn",
+      "label": "MiniMax China",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "minimax-cn",
+      "baseUrl": "https://api.minimaxi.com/v1",
+      "model": "MiniMax-M3",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "api.minimaxi.com"
+    },
+    {
+      "id": "iflytek",
+      "label": "iFlytek Spark",
+      "provider": "openai-compatible",
+      "cloudPolicy": "cloud-ready",
+      "preset": "iflytek",
+      "baseUrl": "https://maas-api.cn-huabei-1.xf-yun.com/v2",
+      "model": "spark-x2.5",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": "maas-api.cn-huabei-1.xf-yun.com"
+    },
+    {
+      "id": "ollama",
+      "label": "Ollama local",
+      "provider": "openai-compatible",
+      "cloudPolicy": "local-only",
+      "preset": "ollama",
+      "baseUrl": "http://localhost:11434/v1",
+      "model": "",
+      "credentialEnv": null,
+      "allowedHost": null
+    },
+    {
+      "id": "lmstudio",
+      "label": "LM Studio local",
+      "provider": "openai-compatible",
+      "cloudPolicy": "local-only",
+      "preset": "lmstudio",
+      "baseUrl": "http://localhost:1234/v1",
+      "model": "",
+      "credentialEnv": null,
+      "allowedHost": null
+    },
+    {
+      "id": "vllm",
+      "label": "vLLM local",
+      "provider": "openai-compatible",
+      "cloudPolicy": "local-only",
+      "preset": "vllm",
+      "baseUrl": "http://localhost:8000/v1",
+      "model": "",
+      "credentialEnv": null,
+      "allowedHost": null
+    },
+    {
+      "id": "custom-gateway",
+      "label": "Custom OpenAI-compatible gateway",
+      "provider": "openai-compatible",
+      "cloudPolicy": "requires-endpoint",
+      "baseUrl": "",
+      "model": "",
+      "credentialEnv": "CLAUDE_MEM_OPENAI_COMPAT_API_KEY",
+      "allowedHost": null
+    }
+  ]
+}
